@@ -12,9 +12,9 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
-const app = require('./server');
+const server = require('./server');
 
 const port = 4000;
-app.listen(port, () => {
-    console.log(`Server is running on hhtp://localhost:${port}`);
+server.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}/`);
 });
