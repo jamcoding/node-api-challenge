@@ -79,6 +79,8 @@ function validateId(req, res, next) {
 function validateBody(req, res, next) {
     if(!req.body.description) {
         res.status(400).json({ message: "Action requires a description" })
+    } else if (req.body.description.length >= 128) {
+        res.status(400).json({ message: "The description has to be less than 128 characters." })
     } else if (!req.body.notes) {
         res.status(400).json({ message: "Action requires notes" })
     } else if (!req.body.project_id) {
